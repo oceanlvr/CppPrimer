@@ -11,7 +11,7 @@ int main()
     }
 
     std::cout << "the sum is: " << sum << std::endl;
-
+    system("pause");
     return 0;
 }
 
