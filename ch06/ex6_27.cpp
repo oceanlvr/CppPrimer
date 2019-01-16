@@ -1,6 +1,6 @@
 #include <initializer_list>
 #include <iostream>
-
+//功能是能够计算所有的和
 int sum(const std::initializer_list<int>& il)
 {
     int sum = 0;
