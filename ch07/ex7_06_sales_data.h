@@ -6,7 +6,9 @@
 
 // added add, read, print functions
 struct Sales_data {
+    // const 函数
     std::string const& isbn() const { return bookNo; };
+    // 不适合定义成类的函数
     Sales_data& combine(const Sales_data&);
 
     std::string bookNo;
@@ -15,6 +17,7 @@ struct Sales_data {
 };
 
 // member functions.
+//成员函数
 Sales_data& Sales_data::combine(const Sales_data& rhs)
 {
     units_sold += rhs.units_sold;
@@ -23,6 +26,7 @@ Sales_data& Sales_data::combine(const Sales_data& rhs)
 }
 
 // nonmember functions
+//非成员函数
 std::istream& read(std::istream& is, Sales_data& item)
 {
     double price = 0;
@@ -31,12 +35,14 @@ std::istream& read(std::istream& is, Sales_data& item)
     return is;
 }
 
+//非成员函数
 std::ostream& print(std::ostream& os, const Sales_data& item)
 {
     os << item.isbn() << " " << item.units_sold << " " << item.revenue;
     return os;
 }
 
+//非成员函数
 Sales_data add(const Sales_data& lhs, const Sales_data& rhs)
 {
     Sales_data sum = lhs;
